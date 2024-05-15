@@ -16,6 +16,8 @@
                 dbPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 dbPath = Path.Combine(dbPath,"..","Library",dbName);
             }
+
+            return dbPath;
         }
     }
 }

@@ -1,4 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
+using TaskManager.Data;
+using TaskManager.Views;
 
 namespace TaskManager
 {
@@ -15,6 +17,9 @@ namespace TaskManager
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+
+            builder.Services.AddDbContext<TaskManagerContext>();
+            builder.Services.AddTransient<ProjectPage>();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

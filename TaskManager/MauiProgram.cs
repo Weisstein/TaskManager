@@ -19,7 +19,14 @@ namespace TaskManager
 
 
             builder.Services.AddDbContext<TaskManagerContext>();
-            builder.Services.AddTransient<ProjectPage>();
+            builder.Services.AddTransient<NotesPage>();
+            builder.Services.AddTransient<AddNotePage>();
+
+            var dbContext = new TaskManagerContext();
+            if (dbContext.Database != null)
+            dbContext.Database.EnsureDeleted();
+            dbContext.Database.EnsureCreated();
+            dbContext.Dispose();
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

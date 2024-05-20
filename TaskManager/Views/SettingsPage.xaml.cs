@@ -5,6 +5,11 @@ public partial class SettingsPage : ContentPage
 	public SettingsPage()
 	{
 		InitializeComponent();
+		if (Application.Current.UserAppTheme == AppTheme.Dark)
+		{
+            set1.Text = "Светлая тема";
+			switch1.IsToggled = true;
+        }
 	}
 
     void theme_Swich_Toggled(object sender, ToggledEventArgs e)

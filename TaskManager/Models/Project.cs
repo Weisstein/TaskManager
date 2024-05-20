@@ -8,6 +8,7 @@ namespace TaskManager.Models
 {
     public class Project
     {
-
+        int Id {  get; set; }
+        int Name { get; set; }
     }
 }

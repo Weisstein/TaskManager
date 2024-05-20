@@ -7,11 +7,11 @@
             InitializeComponent();
             if (Preferences.Get("theme", "light") == "dark")
             {
-                Application.Current.UserAppTheme = AppTheme.Dark; set1.Text = "Светлая тема";
+                Application.Current.UserAppTheme = AppTheme.Dark;
             }
             else
             {
-                Application.Current.UserAppTheme = AppTheme.Light; set1.Text = "Темная тема";
+                Application.Current.UserAppTheme = AppTheme.Light;
             }
             MainPage = new AppShell();
         }

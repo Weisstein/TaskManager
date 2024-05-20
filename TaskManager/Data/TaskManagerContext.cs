@@ -1,15 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using System.Data;
+using TaskManager.Models;
 
 namespace TaskManager.Data
 {
     public class TaskManagerContext : DbContext
     {
-        public TaskManagerContext()
-        {
-            if(Database != null)
-                Database.EnsureCreated();
-        }
 
+        public DbSet<Notes> Notes {  get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

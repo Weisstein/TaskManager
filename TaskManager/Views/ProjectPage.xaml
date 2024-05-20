@@ -10,7 +10,7 @@
         <Border.StrokeShape>
             <RoundRectangle CornerRadius="190"/>
         </Border.StrokeShape>
-        <ImageButton Source="add.svg"/>
+        <ImageButton Source="{AppThemeBinding Light=add.svg, Dark=add_dark.svg}"/>
     </Border>
     
 </ContentPage>

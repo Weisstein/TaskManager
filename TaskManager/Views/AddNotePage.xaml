@@ -3,9 +3,13 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.Views.AddNotePage">
     <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+        <FlexLayout Wrap="NoWrap" JustifyContent="SpaceBetween" Direction="Row" Margin="10">
+            <ImageButton FlexLayout.AlignSelf="Start" FlexLayout.Basis="5%" Source="{AppThemeBinding Light=remove.svg, Dark=remove_dark.svg}" WidthRequest="30" HeightRequest="30" Clicked="RemoveButtonClicked"/>
+            <ImageButton FlexLayout.AlignSelf="End" Source="{AppThemeBinding Light=check.svg, Dark=check_dark.svg}" WidthRequest="30" HeightRequest="30" Clicked="SaveButtonClicked"/>
+        </FlexLayout>
+        
+        <Entry x:Name="title" Text="{Binding Title}" FontSize="18" Margin="10,0,10,0" Placeholder="Заголовок"/>
+        
+        <Editor x:Name="text" Text="{Binding Text}" AutoSize="TextChanges" FontSize="14" Margin="10,0,10,0" />
     </VerticalStackLayout>
 </ContentPage>

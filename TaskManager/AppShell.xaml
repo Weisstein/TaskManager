@@ -26,4 +26,6 @@
             <ShellContent ContentTemplate="{DataTemplate views:SettingsPage}"/>
         </Tab>
     </TabBar>
+
+    <ShellContent ContentTemplate="{DataTemplate views:EditNotePage}"/>
 </Shell>

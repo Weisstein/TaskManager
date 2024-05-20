@@ -9,6 +9,12 @@ namespace TaskManager.Data
 
         public DbSet<Notes> Notes {  get; set; }
 
+        public TaskManagerContext()
+        {
+            SQLitePCL.Batteries_V2.Init();
+            this.Database.EnsureCreated();
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connection = $"Filename={DbPath.GetPath("TaskManager.db")}";

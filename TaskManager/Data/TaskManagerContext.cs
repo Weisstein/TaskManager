@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Data;
 using TaskManager.Models;
 
 namespace TaskManager.Data
@@ -8,6 +7,10 @@ namespace TaskManager.Data
     {
 
         public DbSet<Notes> Notes {  get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<Activity> Activitys { get; set; }
+        public DbSet<Tasks> Tasks { get; set; }
+        public DbSet<SubTask> SubTasks { get; set; }
 
         public TaskManagerContext()
         {

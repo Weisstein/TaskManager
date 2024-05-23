@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using TaskManager.Data;
 using TaskManager.Models;
@@ -24,21 +25,27 @@ public partial class ProjectsPage : ContentPage
     private async void OnAddButton_Clicked(object sender, EventArgs e)
     {
 		string title = await DisplayPromptAsync("Создание проекта","Название проекта","Добавить","Отмена");
-		Project project = new Project()
+		
+		if(!string.IsNullOrEmpty(title))
 		{
-			Title = title
-		};
-
-		using (var db = new TaskManagerContext())
-		{
-			db.Projects.Add(project);
-			await db.SaveChangesAsync();
-			base.OnAppearing();
+			Project project = new Project()
+			{
+				Title = title
+			};
+			using (var db = new TaskManagerContext())
+			{
+				db.Projects.Add(project);
+				await db.SaveChangesAsync();
+			
+			}
+			OnAppearing();
 		}
+		
     }
 
 	private async void OnItemClick(object sender, SelectionChangedEventArgs e)
 	{
 		await Navigation.PushAsync(new ProjectPage(e.CurrentSelection.FirstOrDefault() as Project));
 	}
+
 }

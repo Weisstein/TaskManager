@@ -11,7 +11,7 @@
         <Tab
             Title="Проекты"
             Icon="task.svg">
-            <ShellContent ContentTemplate="{DataTemplate views:ProjectPage}"/>
+            <ShellContent ContentTemplate="{DataTemplate views:ProjectsPage}"/>
         </Tab>
         <Tab
             Title="Заметки"
@@ -28,5 +28,5 @@
     </TabBar>
 
     <ShellContent ContentTemplate="{DataTemplate views:EditNotePage}"/>
-    <ShellContent ContentTemplate="{DataTemplate views:}"/>
+    <ShellContent ContentTemplate="{DataTemplate views:ProjectPage}"/>
 </Shell>

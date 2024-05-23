@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using TaskManager.Views;
 
 namespace TaskManager
 {
@@ -16,7 +17,7 @@ namespace TaskManager
                     fonts.AddFont("fontello.ttf","Icons");
                 });
 
-           
+            
 #if DEBUG
             builder.Logging.AddDebug();
 #endif

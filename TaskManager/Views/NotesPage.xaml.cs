@@ -16,8 +16,9 @@ public partial class NotesPage : ContentPage
 		base.OnAppearing();
 		using (var db = new TaskManagerContext())
 		{
-			var notes = db.Notes.ToList();
-			noteList.BindingContext = notes;
+			var notes = db.Notes.OrderByDescending(n=>n.CreatedOn).ToList();
+			noteList.ItemsSource = notes;
+			
 		}
 	}
 

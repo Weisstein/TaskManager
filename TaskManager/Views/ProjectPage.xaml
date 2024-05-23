@@ -3,14 +3,29 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TaskManager.Views.ProjectPage"
              Title="Проекты">
-    
-    
-    
-    <Border VerticalOptions="End" HorizontalOptions="End" Margin="10">
-        <Border.StrokeShape>
-            <RoundRectangle CornerRadius="190"/>
-        </Border.StrokeShape>
-        <ImageButton Source="{AppThemeBinding Light=add.svg, Dark=add_dark.svg}"/>
-    </Border>
-    
+    <Grid>
+        <CollectionView x:Name="projects" SelectionMode="Single">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <HorizontalStackLayout Spacing="10" Margin="10,0,0,0">
+                            <Image/>
+                            <Label Text="{Binding Title}" FontSize="18"/>
+                        </HorizontalStackLayout>
+                        <BoxView HeightRequest="1" HorizontalOptions="Fill" Margin="1"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Border VerticalOptions="End" HorizontalOptions="End" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="190"/>
+            </Border.StrokeShape>
+            <ImageButton Source="add.svg"
+                     BackgroundColor="{AppThemeBinding Light=#873e23, Dark=Orange}"/>
+        </Border>
+        <!--Clicked="onAddButtonClick"-->
+    </Grid>
 </ContentPage>

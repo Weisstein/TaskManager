@@ -1,12 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace TaskManager.Models
 {
-    internal class SubTask
+    public class SubTask
     {
+        [Key]
+        public int Id {  get; set; }
+        public string? Title { get; set; }
+        public bool IsComplited { get; set; }
+        public int TaskId { get; set; }
+        [ForeignKey(nameof(TaskId))]
+        public Task? Task { get; set; }
     }
 }

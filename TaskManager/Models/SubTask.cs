@@ -11,6 +11,6 @@ namespace TaskManager.Models
         public bool IsComplited { get; set; }
         public int TaskId { get; set; }
         [ForeignKey(nameof(TaskId))]
-        public Task? Task { get; set; }
+        public Tasks? Task { get; set; }
     }
 }

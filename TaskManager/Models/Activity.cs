@@ -11,6 +11,6 @@ namespace TaskManager.Models
         public int ProjectId { get; set; }
         [ForeignKey(nameof(ProjectId))]
         public Project? Project { get; set; }
-        public List<Task>? Tasks { get; set; }
+        public List<Tasks>? Tasks { get; set; }
     }
 }

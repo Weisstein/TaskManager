@@ -28,4 +28,5 @@
     </TabBar>
 
     <ShellContent ContentTemplate="{DataTemplate views:EditNotePage}"/>
+    <ShellContent ContentTemplate="{DataTemplate views:}"/>
 </Shell>

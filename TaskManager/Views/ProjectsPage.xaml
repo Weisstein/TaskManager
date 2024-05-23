@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.Views.ProjectsPage"
+             Title="Проекты">
+    <Grid>
+        <CollectionView x:Name="projects" SelectionMode="Single" SelectionChanged="OnItemClick">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <HorizontalStackLayout Spacing="10" Margin="10,10,10,0" HeightRequest="30">
+                        <Label Text="&#xf114;" FontSize="20" FontFamily="Icons" VerticalOptions="Center"/>
+                        <Label Text="{Binding Title}" FontSize="18" VerticalOptions="Center"/>
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+        <Border VerticalOptions="End" HorizontalOptions="End" Margin="10">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="190"/>
+            </Border.StrokeShape>
+            <ImageButton Source="add.svg" Clicked="OnAddButton_Clicked"
+                     BackgroundColor="{AppThemeBinding Light=#873e23, Dark=Orange}"/>
+        </Border>
+        
+    </Grid>
+</ContentPage>

@@ -60,8 +60,6 @@ namespace TaskManager
             {
 #if ANDROID
                             handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
-                            if (!handler.PlatformView.IsInEditMode)
-                                handler.PlatformView.SetTextColor(Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.ParseColor("#919191")));
                             handler.PlatformView.SetPadding(0, 0, 0, 0);
 
 #endif
@@ -71,8 +69,6 @@ namespace TaskManager
             {
 #if ANDROID
                             handler.PlatformView.BackgroundTintList = Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.Transparent);
-                            if(!handler.PlatformView.IsInEditMode)
-                                handler.PlatformView.SetTextColor(Android.Content.Res.ColorStateList.ValueOf(Android.Graphics.Color.ParseColor("#919191")));
                             handler.PlatformView.SetPadding(0, 0, 0, 0);
 
 #endif

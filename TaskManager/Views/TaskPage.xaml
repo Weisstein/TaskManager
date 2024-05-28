@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TaskManager.Views.TaskPage"
+             Title="{Binding Title}">
+    <ContentPage.ToolbarItems>
+
+    </ContentPage.ToolbarItems>
+    <Grid RowDefinitions="auto,auto,*">
+        <Grid Grid.Row="0" Margin="20">
+            <Label Grid.Row="0" Text="Дата создания" VerticalOptions="Center"/>
+            <HorizontalStackLayout Grid.Row="1" HorizontalOptions="End" VerticalOptions="Center" Spacing="10">
+                <DatePicker Date="{Binding Created}" Format="dd.MM.yyyy" IsEnabled="False">
+                    <DatePicker.Style>
+                        <Style TargetType="DatePicker">
+                            <Setter Property="VisualStateManager.VisualStateGroups">
+                                <VisualStateGroupList>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="Disabled">
+                                            <VisualState.Setters>
+                                                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateGroupList>
+                            </Setter>
+                        </Style>
+                    </DatePicker.Style>
+                </DatePicker>
+                <TimePicker Time="{Binding Created.TimeOfDay}" Format="HH:mm" IsEnabled="False">
+                    <TimePicker.Style>
+                        <Style TargetType="TimePicker">
+                            <Setter Property="VisualStateManager.VisualStateGroups">
+                                <VisualStateGroupList>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="Disabled">
+                                            <VisualState.Setters>
+                                                <Setter Property="TextColor" Value="{AppThemeBinding Light={StaticResource Black}, Dark={StaticResource White}}"/>
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateGroupList>
+                            </Setter>
+                        </Style>
+                    </TimePicker.Style>
+                </TimePicker>
+            </HorizontalStackLayout>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="20,0,20,0">
+            <Label Text="Не выполнено" VerticalOptions="Center"/>
+            <Switch IsToggled="False" HorizontalOptions="End" VerticalOptions="Center"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="20,20,0,0">
+            <Label Text="Подзадачи"/>
+            <CollectionView x:Name="subTaskList" Margin="0,10,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <SwipeView>
+                            <SwipeView.LeftItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem BackgroundColor="LightGreen" IconImageSource="check_dark.svg"/>
+                                </SwipeItems>
+                            </SwipeView.LeftItems>
+                            <SwipeView.RightItems>
+                                <SwipeItems Mode="Execute">
+                                    <SwipeItem BackgroundColor="Red" IconImageSource="check_dark.svg"/>
+                                </SwipeItems>
+                            </SwipeView.RightItems>
+                        </SwipeView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+        
+    </Grid>
+
+</ContentPage>

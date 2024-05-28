@@ -30,7 +30,7 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="190"/>
             </Border.StrokeShape>
-            <ImageButton Source="Light=add.svg" Clicked="onAddButtonClick" 
+            <ImageButton Source="add.svg" Clicked="onAddButtonClick" 
                          BackgroundColor="{AppThemeBinding Light=#873e23, Dark=Orange}"/>
         </Border>
     </Grid>

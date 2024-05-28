@@ -12,7 +12,7 @@ public partial class SettingsPage : ContentPage
         }
 	}
 
-    void theme_Swich_Toggled(object sender, ToggledEventArgs e)
+     private void theme_Swich_Toggled(object sender, ToggledEventArgs e)
 	{
 		switch (e.Value)
 		{
@@ -20,5 +20,10 @@ public partial class SettingsPage : ContentPage
 			case false: Preferences.Set("theme", "light"); Application.Current.UserAppTheme = AppTheme.Light; set1.Text = "Темная тема"; break;
 		}
 			
+	}
+
+    private void OnAbout_Clicked(object sender, EventArgs e)
+	{
+		AppInfo.Current.ShowSettingsUI();
 	}
 }

@@ -29,4 +29,5 @@
 
     <ShellContent ContentTemplate="{DataTemplate views:EditNotePage}"/>
     <ShellContent ContentTemplate="{DataTemplate views:ProjectPage}"/>
+    <ShellContent ContentTemplate="{DataTemplate views:TaskPage}"/>
 </Shell>
